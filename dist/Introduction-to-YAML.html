@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Introduction-to-YAML</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">Introduction to YAML</h1>
+
+<p>YAML is a very simple, text/human-readable annotation format that can be used to store data introduced by Clark Evans in 2001. It is commonly used for configuration files, but could be used in many applications where data is being stored (like XML). </p>
+
+<p>It supports JSON, another minimalist data serialization format where braces and brackets are used instead of indentation.</p>
+
+<h2 id="toc_1">Why ?</h2>
+
+<p>YAML is:</p>
+
+<ul>
+<li>This is Human readable</li>
+<li>Really permissive</li>
+<li>Syntax highlighting is often available by default in major editors</li>
+<li>Implementations is widespread</li>
+<li>Allows for more sophisticated structures than a typical ini file</li>
+<li>Most support sections/options already. But many coders require/prefer one that allow for as many settings on a per-domain base, so they need another level of structure.</li>
+</ul>
+
+<h2 id="toc_2">Basic principles</h2>
+
+<ul>
+<li>Always save using the UTF-8 encoding to minimize the possibility of errors.</li>
+<li>Never, EVER use the TAB character anywhere in it. This doesn&#39;t work.</li>
+<li>Editing with a WYSIWYG text processor, such as Microsoft Word, is not recommended.</li>
+<li>Use a monowidth/monospaced font to view the contents. Examples you may have in your computer: Fixedsys, Lucida Console, Consolas, Monaco, DejaVu Sans Mono, Courier New.</li>
+</ul>
+
+<p>Whenever you see the <strong>#</strong> character anywhere in the file that isn&#39;t first enclosed in &#39;&#39; (quotes) or &quot;&quot; (double quotes), it marks the beginning of a <strong>comment</strong>. This means all the text after it, up until the end of the line, is <em>completely ignored</em> and has no effect. You can use this to write notes on the file or temporarily disable one or more options.</p>
+
+<p>These are all comments:</p>
+
+<div><pre><code class="language-yaml">#debug: false
+#Hello there, how are you?
+debug: false # &lt;- The line is read up to this character!</code></pre></div>
+
+<p>This is not commented:</p>
+
+<div><pre><code class="language-yaml">name: &#39;#changeme&#39;</code></pre></div>
+
+<p>But this is:</p>
+
+<div><pre><code class="language-yaml">#name: &#39;#changeme&#39;</code></pre></div>
+
+<h2 id="toc_3">Key-value pairs</h2>
+
+<p>YAML keeps data stored as a map containing keys and values associated with those keys. This map is in no particular order, so you can reorder it at will. Each pair is in the format KEY: VALUE. For example:</p>
+
+<div><pre><code class="language-yaml">minecraft-tag: &#39;minecraft&#39;
+cancelled-tag: &#39;cancelled&#39;</code></pre></div>
+
+<p>Note the &#39;quotes&#39; around the value. When the value is a text string, we use the quotes to make sure any special characters aren&#39;t given special meaning, and instead are all kept as part of the value. So even though they are optional, using them is highly recommended.</p>
+
+<p>Other than text, numbers and true/false, the value associated to a key can also be another map of key-value pairs. To achieve this, omit the value and instead write the key-value pairs in the following lines. However, you must prefix them with at least one more SPACE character than the key.</p>
+
+<p>YAML will consider that lines prefixed with more spaces than the parent key are contained inside it; Moreover, all lines must be prefixed with the same number of spaces to belong to the same map. So this works:</p>
+
+<div><pre><code class="language-yaml">formatting:
+  from-game:
+    chat: &#39;(%sender%) %message%&#39;
+    action: &#39;* %sender% %message%&#39;</code></pre></div>
+
+<p>This works too:</p>
+
+<div><pre><code class="language-yaml">formatting:
+        from-game:
+                chat: &#39;(%sender%) %message%&#39;
+                action: &#39;* %sender% %message%&#39;</code></pre></div>
+
+<p>But this doesn&#39;t work:</p>
+
+<div><pre><code class="language-not-yaml">formatting:
+from-game:
+chat: &#39;(%sender%) %message%&#39;
+action: &#39;* %sender% %message%&#39;</code></pre></div>
+
+<h3 id="toc_4">Alternative format</h3>
+
+<p>YAML supports JSON syntax to store key-value maps, useful for compressing small maps into a single line. Syntax like : {KEY: VALUE, KEY: VALUE, ...} works. The above example would become:</p>
+
+<div><pre><code class="language-yaml">formatting: {from-game: {chat: &#39;(%sender%) %message%&#39;, action: &#39;* %sender% %message%&#39;}}</code></pre></div>
+
+<h2 id="toc_5">Lists</h2>
+
+<p>There is one other data structure from YAML we need to use - The list. Lists are used to store a collection of ordered values. The values are not associated with a key, only with a positional index obtained from the order in which they are specified (item 1, item 2, etc.).</p>
+
+<div><pre><code class="language-yaml">mylist:
+- &#39;item 1&#39;
+- &#39;item 2&#39;</code></pre></div>
+
+<p>Like key-value pairs, list items are defined in the lines below the list key, all with the same number of spaces prefixing them (at least as many spaces as the parent key). The difference is that they begin with a dash (<strong>-</strong>). Here&#39;s another valid list:</p>
+
+<div><pre><code class="language-yaml">mylist:
+- 100
+- 200</code></pre></div>
+
+<p>Now, remember how you could put key-value maps inside key-value maps? You can do the same with lists. You can have:
+* Map inside Map (as seen in the previous section)
+* Lists inside maps (as seen immediately above - lists are, by default, inside maps, since they need a key)
+* Maps inside lists</p>
+
+<div><pre><code class="language-yaml">channels:
+  - name: &#39;#mychannel&#39;
+    password: &#39;&#39;
+  - name: &#39;#myprivatechannel&#39;
+    password: &#39;mypassword&#39;</code></pre></div>
+
+<ul>
+<li>List inside List</li>
+</ul>
+
+<div><pre><code class="language-yaml">twobytwotable:
+  - - &#39;a1&#39;
+    - &#39;a2&#39;
+  - - &#39;b1&#39;
+    - &#39;b2&#39;</code></pre></div>
+
+<h3 id="toc_6">Alternative format</h3>
+
+<p>Guess what, there&#39;s also a one-line format for lists! It is [ITEM1, ITEM2, ITEM3, ...]. Here&#39;s the above example:</p>
+
+<div><pre><code class="language-yaml">twobytwotable: [ [&#39;a1&#39;, &#39;a2&#39;], [&#39;b1&#39;, &#39;b2&#39;] ]</code></pre></div>
+
+<h3 id="toc_7">Multiple lines</h3>
+
+<p>Values can span multiple lines using <code>|</code> or <code>&gt;</code>.  Spanning multiple lines using a <code>|</code> will include the newlines.  Using a <code>&gt;</code> will ignore newlines; it&#39;s used to make what would otherwise be a very long line easier to read and edit.
+In either case the indentation will be ignored.
+Examples are::</p>
+
+<div><pre><code class="language-yaml">include_newlines: |
+            exactly as you see
+            will appear these three
+            lines of poetry
+
+ignore_newlines: &gt;
+            this is really a
+            single line of text
+            despite appearances</code></pre></div>
+
+<p>Let&#39;s combine what we learned so far in an arbitrary YAML example.
+This really has nothing to do with Ansible, but will give you a feel for the format::</p>
+
+<div><pre><code class="language-yaml"># An employee record
+name: Martin D&#39;vloper
+job: Developer
+skill: Elite
+employed: True
+foods:
+    - Apple
+    - Orange
+    - Strawberry
+    - Mango
+languages:
+    perl: Elite
+    python: Elite
+    pascal: Lame
+education: |
+    4 GCSEs
+    3 A-Levels
+    BSc in the Internet of Things</code></pre></div>
+
+<p>That&#39;s all you really need to know about YAML to start writing YAML.</p>
+
+<h2 id="toc_8">Node anchors</h2>
+
+<p>Two features that distinguish YAML from the capabilities of other data serialization languages are structures and data typing.</p>
+
+<p>YAML structures enable storage of multiple documents within single file, usage of references for repeated nodes, and usage of arbitrary nodes as keys.</p>
+
+<p>For clarity, compactness, and avoiding data entry errors, YAML provides node anchors (using <code>&amp;</code>) and references (using <code>*</code>). References to the anchor work for all data types (see the ship-to reference in the example below).</p>
+
+<p>Below is an example of a queue in an instrument sequencer in which two steps are reused repeatedly without being fully described each time.</p>
+
+<div><pre><code class="language-yaml"># sequencer protocols for Laser eye surgery
+---
+- step:  &amp;id001  # defines anchor label &amp;id001
+    instrument:      Lasik 2000
+    pulseEnergy:     5.4
+    pulseDuration:   12
+    repetition:      1000
+    spotSize:        1mm
+
+- step: &amp;id002
+    instrument:      Lasik 2000
+    pulseEnergy:     5.0
+    pulseDuration:   10
+    repetition:      500
+    spotSize:        2mm
+- step: *id001 # refers to the first step (with anchor &amp;id001)
+- step: *id002 # refers to the second step
+- step:
+    &lt;&lt;: *id001
+    spotSize: 2mm # redefines just this key, refers rest from &amp;id001
+- step: *id002</code></pre></div>
+
+<h2 id="toc_9">Types</h2>
+
+<p>Explicit data typing is seldom seen in the majority of YAML documents since YAML autodetects simple types. Data types can be divided into three categories: core, defined, and user-defined. Core are ones expected to exist in any parser (e.g. floats, ints, strings, lists, maps, ...). Many more advanced data types, such as binary data, are defined in the YAML specification but not supported in all implementations. Finally YAML defines a way to extend the data type definitions locally to accommodate user-defined classes, structures or primitives (e.g. quad-precision floats).</p>
+
+<p>YAML autodetects the datatype of the entity. Sometimes one wants to cast the datatype explicitly. The most common situation is where a single-word string that looks like a number, boolean or tag requires disambiguation by surrounding it with quotes or using an explicit datatype tag.</p>
+
+<div><pre><code class="language-yaml">a: 123                     # an integer
+b: &quot;123&quot;                   # a string, disambiguated by quotes
+c: 123.0                   # a float
+d: !!float 123             # also a float via explicit data type prefixed by (!!)
+e: !!str 123               # a string, disambiguated by explicit type
+f: !!str Yes               # a string via explicit type
+g: Yes                     # a boolean True (yaml1.1), string &quot;Yes&quot; (yaml1.2)
+h: Yes we have No bananas  # a string, &quot;Yes&quot; and &quot;No&quot; disambiguated by context.</code></pre></div>
+
+<p>Not every implementation of YAML has every specification-defined data type. These built-in types use a double exclamation sigil prefix (<code>!!</code>). </p>
+
+<p>Particularly interesting ones not shown here are sets, ordered maps, timestamps, and hexadecimal. Here&#39;s an example of base64 encoded binary data.</p>
+
+<div><pre><code class="language-yaml">gif_file: !!binary |
+    R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5
+    OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+
+    +f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC
+    AgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=</code></pre></div>
+
+<p>Date can be handle too: </p>
+
+<div><pre><code class="language-yaml">datetime: 2001-12-15T02:59:43.1Z
+datetime_with_spaces: 2001-12-14 21:59:43.10 -5
+date: 2002-12-14</code></pre></div>
+
+<h2 id="toc_10">Multiples documents</h2>
+
+<p>Core to YAML is the concept of documents. A document is not just a separate file in this case. Instead, think of a document as just a chunk of YAML. You can have multiple documents in a single stream of YAML, if each one is separated by &#39;&#39;---&#39;&#39;, like:</p>
+
+<div><pre><code class="language-yaml">document: this is doc 1
+---
+document: this is doc 2
+...</code></pre></div>
+
+<p>Using an ellipsis explicitly ends a document. The nice thing about documents is you can treat them as different entities. Let&#39;s say, &quot;people&quot; and &quot;cars&quot; are in the same file. You can use them for a bunch of entities that look alike, e.g.:</p>
+
+<div><pre><code class="language-yaml">---
+employed: true
+family: [wife, toddler]
+hobby: python
+limbs: {arms: 2, legs: 2}
+person: jesse
+---
+employed: true
+family: [wife, toddler]
+hobby: python
+limbs: {arms: 2, legs: 2}
+person: jesse</code></pre></div>
+
+<h2 id="toc_11">Variables</h2>
+
+<p>There is actually no support of variables into <a href="http://www.yaml.org/spec/1.2/spec.html">the last specifications of YAML</a>. But there is <a href="https://github.com/arthurlacoste/tampax">some implementations</a> to use a system handling variables. Extensions library or template system like <a href="jinja.pocoo.org">Jinja2</a> or <a href="https://twig.symfony.com/">Twig</a> can be a way to add this feature to your YAML files.</p>
+
+<h2 id="toc_12">Conclusion</h2>
+
+<p>Now that you&#39;re a more knowledgeable person, I hope you can add new items to a list or keep your key-value pairs aligned without making a scene. You can freely create or adjust your YAML files to your taste by swapping to/from the alternative formats, changing the order of the keys in a map and adding/removing comments.</p>
+
+<h2 id="toc_13">References</h2>
+
+<ul>
+<li><a href="">https://github.com/Animosity/CraftIRC/wiki/Complete-idiot&#39;s-introduction-to-yaml</a></li>
+<li><a href="">http://jessenoller.com/blog/2009/04/13/yaml-aint-markup-language-completely-different</a></li>
+<li><a href="">http://docs.ansible.com/ansible/latest/YAMLSyntax.html</a></li>
+<li><a href="">https://en.m.wikipedia.org/wiki/YAML</a></li>
+<li><a href="">https://github.com/yaml/YAML2/wiki/Who-uses-it-and-why%3F</a></li>
+</ul>
+
+<h2 id="toc_14">External links</h2>
+
+<ul>
+<li><a href="">http://yaml.org/</a></li>
+<li><a href="https://nodeca.github.io/js-yaml/">Online YAML &gt; JSON parser</a></li>
+<li><a href="https://www.json2yaml.com/">Online JSON &gt; YAML parser</a></li>
+<li><a href="https://codebeautify.org/yaml-validator">YAML validator</a></li>
+</ul>
+
+
+
+
+</body>
+
+</html>
