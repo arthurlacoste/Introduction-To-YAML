@@ -6,8 +6,6 @@ It supports JSON, another minimalist data serialization format where braces and 
 
 ## Why ?
 
-YAML is:
-
 - This is Human readable
 - Really permissive
 - Syntax highlighting is often available by default in major editors
