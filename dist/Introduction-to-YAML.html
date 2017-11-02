@@ -441,9 +441,8 @@ In either case the indentation will be ignored.
 Examples are::</p>
 
 <div><pre><code class="language-yaml">include_newlines: |
-  exactly as you see
-  will appear these three
-  lines of poetry
+  \/ /| |\/| |
+  / / | |  | |__
 
 ignore_newlines: &gt;
   this is really a
@@ -454,7 +453,7 @@ ignore_newlines: &gt;
 This really has nothing to do with Ansible, but will give you a feel for the format::</p>
 
 <div><pre><code class="language-yaml"># An employee record
-name: Martin D&#39;vloper
+name: Martin Devloper
 job: Developer
 skill: Elite
 employed: True
@@ -568,7 +567,15 @@ person: jesse</code></pre></div>
 
 <h2 id="toc_12">Conclusion</h2>
 
-<p>Now that you&#39;re a more knowledgeable person, I hope you can add new items to a list or keep your key-value pairs aligned without making a scene. You can freely create or adjust your YAML files to your taste by swapping to/from the alternative formats, changing the order of the keys in a map and adding/removing comments.</p>
+<p>Now that you&#39;re a more knowledgeable person, I hope you can add new items to a list or keep your key-value pairs aligned without any trouble. You can freely create or adjust your YAML files to your taste by swapping to/from the alternative formats, changing the order of the keys in a map and adding/removing comments.</p>
+
+<p>There is other data serialization format, and each of him has pros and cons. </p>
+
+<ul>
+<li><a href="https://www.w3schools.com/js/js_json_intro.asp">JSON</a> was made for JavaScript and work very well with it</li>
+<li><a href="https://en.m.wikipedia.org/wiki/XML">XML</a> was excellent, and XHTML his born from him</li>
+<li><a href="https://msgpack.org/">MessagePack</a> have the best performances, but isn&#39;t human readable</li>
+</ul>
 
 <h2 id="toc_13">References</h2>
 

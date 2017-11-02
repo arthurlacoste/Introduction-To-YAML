@@ -154,13 +154,13 @@ Multiple lines
 
 Values can span multiple lines using | or >. Spanning multiple lines using a | will include the newlines. Using a > will ignore newlines; it's used to make what would otherwise be a very long line easier to read and edit. In either case the indentation will be ignored. Examples are::
 
-include_newlines: | exactly as you see will appear these three lines of poetry ignore_newlines: > this is really a single line of text despite appearances
+include_newlines: | \/ /| |\/| | / / | | | |__ ignore_newlines: > this is really a single line of text despite appearances
 
 
 
 Let's combine what we learned so far in an arbitrary YAML example. This really has nothing to do with Ansible, but will give you a feel for the format::
 
-# An employee record name: Martin D'vloper job: Developer skill: Elite employed: True foods: - Apple - Orange - Strawberry - Mango languages: perl: Elite python: Elite pascal: Lame education: | 4 GCSEs 3 A-Levels BSc in the Internet of Things
+# An employee record name: Martin Devloper job: Developer skill: Elite employed: True foods: - Apple - Orange - Strawberry - Mango languages: perl: Elite python: Elite pascal: Lame education: | 4 GCSEs 3 A-Levels BSc in the Internet of Things
 
 
 
@@ -243,7 +243,15 @@ There is actually no support of variables into the last specifications of YAML. 
 Conclusion
 
 
-Now that you're a more knowledgeable person, I hope you can add new items to a list or keep your key-value pairs aligned without making a scene. You can freely create or adjust your YAML files to your taste by swapping to/from the alternative formats, changing the order of the keys in a map and adding/removing comments.
+Now that you're a more knowledgeable person, I hope you can add new items to a list or keep your key-value pairs aligned without any trouble. You can freely create or adjust your YAML files to your taste by swapping to/from the alternative formats, changing the order of the keys in a map and adding/removing comments.
+
+There is other data serialization format, and each of him has pros and cons.
+
+JSON was made for JavaScript and work very well with it
+
+XML was excellent, and XHTML his born from him
+
+MessagePack have the best performances, but isn't human readable
 
 
 
