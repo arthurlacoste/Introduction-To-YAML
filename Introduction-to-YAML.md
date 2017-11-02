@@ -47,8 +47,8 @@ But this is:
 YAML keeps data stored as a map containing keys and values associated with those keys. This map is in no particular order, so you can reorder it at will. Each pair is in the format KEY: VALUE. For example:
 
 ```yaml
-minecraft-tag: 'minecraft'
-cancelled-tag: 'cancelled'
+min-tag: 'minecraft'
+can-tag: 'cancelled'
 ```
 
 Note the 'quotes' around the value. When the value is a text string, we use the quotes to make sure any special characters aren't given special meaning, and instead are all kept as part of the value. So even though they are optional, using them is highly recommended.
@@ -59,7 +59,7 @@ YAML will consider that lines prefixed with more spaces than the parent key are 
 
 ```yaml
 formatting:
-  from-game:
+  fromgame:
     chat: '(%sender%) %message%'
     action: '* %sender% %message%'
 ```
@@ -140,7 +140,7 @@ Guess what, there's also a one-line format for lists! It is [ITEM1, ITEM2, ITEM3
 twobytwotable: [ ['a1', 'a2'], ['b1', 'b2'] ]
 ```
 
-### Multiple lines
+## Multiple lines
 
 Values can span multiple lines using ``|`` or ``>``.  Spanning multiple lines using a ``|`` will include the newlines.  Using a ``>`` will ignore newlines; it's used to make what would otherwise be a very long line easier to read and edit.
 In either case the indentation will be ignored.
@@ -148,14 +148,14 @@ Examples are::
 
 ```yaml
 include_newlines: |
-            exactly as you see
-            will appear these three
-            lines of poetry
+  exactly as you see
+  will appear these three
+  lines of poetry
 
 ignore_newlines: >
-            this is really a
-            single line of text
-            despite appearances
+  this is really a
+  single line of text
+  despite appearances
 ```
 
 Let's combine what we learned so far in an arbitrary YAML example.
@@ -168,18 +168,18 @@ job: Developer
 skill: Elite
 employed: True
 foods:
-    - Apple
-    - Orange
-    - Strawberry
-    - Mango
+  - Apple
+  - Orange
+  - Strawberry
+  - Mango
 languages:
-    perl: Elite
-    python: Elite
-    pascal: Lame
+  perl: Elite
+  python: Elite
+  pascal: Lame
 education: |
-    4 GCSEs
-    3 A-Levels
-    BSc in the Internet of Things
+  4 GCSEs
+  3 A-Levels
+  BSc in the Internet of Things
 ```
 
 That's all you really need to know about YAML to start writing YAML.
@@ -198,23 +198,23 @@ Below is an example of a queue in an instrument sequencer in which two steps are
 # sequencer protocols for Laser eye surgery
 ---
 - step:  &id001  # defines anchor label &id001
-    instrument:      Lasik 2000
-    pulseEnergy:     5.4
-    pulseDuration:   12
-    repetition:      1000
-    spotSize:        1mm
+  instrument: Lasik 2000
+  energy: 5.4
+  duration: 12
+  repetition: 1000
+  size: 1mm
 
 - step: &id002
-    instrument:      Lasik 2000
-    pulseEnergy:     5.0
-    pulseDuration:   10
-    repetition:      500
-    spotSize:        2mm
+  instrument: Lasik 2000
+  energy: 5.0
+  duration: 10
+  repetition: 500
+  size: 2mm
 - step: *id001 # refers to the first step (with anchor &id001)
 - step: *id002 # refers to the second step
 - step:
     <<: *id001
-    spotSize: 2mm # redefines just this key, refers rest from &id001
+    size: 2mm # redefines just this key, refers rest from &id001
 - step: *id002
 ```
 
@@ -242,10 +242,10 @@ Particularly interesting ones not shown here are sets, ordered maps, timestamps,
 
 ```yaml
 gif_file: !!binary |
-    R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5
-    OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+
-    +f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC
-    AgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=
+  R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5
+  OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+
+  +f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC
+  AgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=
 ```
 
 Date can be handle too: 
@@ -261,6 +261,7 @@ date: 2002-12-14
 Core to YAML is the concept of documents. A document is not just a separate file in this case. Instead, think of a document as just a chunk of YAML. You can have multiple documents in a single stream of YAML, if each one is separated by ''---'', like:
 
 ```yaml
+---
 document: this is doc 1
 ---
 document: this is doc 2
