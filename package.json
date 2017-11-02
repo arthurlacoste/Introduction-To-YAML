@@ -24,5 +24,8 @@
   "homepage": "https://github.com/arthurlacoste/Introduction-To-YAML#readme",
   "devDependencies": {
     "gitbook-cli": "^2.3.2"
+  },
+  "dependencies": {
+    "gitbook-plugin-edit-link": "^2.0.2"
   }
 }

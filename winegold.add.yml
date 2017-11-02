@@ -1,0 +1,17 @@
+# this file config a deploy with winegold
+
+name: Convert MD dude
+
+trigger :
+  fileExtension:
+   - md
+
+cmd:
+  exec: |
+    ebook-convert {{file}} {{dir}}/{{name}}.epub --verbose
+    ebook-convert {{file}} {{dir}}/{{name}}.mobi --verbose
+    ebook-convert {{file}} {{dir}}/{{name}}.pdf --verbose
+    ebook-convert {{file}} {{dir}}/{{name}}.txt --verbose
+
+execInWindow: true
+autolaunch: true

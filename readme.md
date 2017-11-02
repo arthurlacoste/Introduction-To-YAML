@@ -1,10 +1,10 @@
 # Introduction to YAML
 
-[The document is here](Introduction-to-YAML.md)
+[The document is here](https://arthurlacoste.github.io/Introduction-To-YAML/)
 
 ## Alternatives versions
 
-- [HTML](dist/Introduction-to-YAML.html)
-- [EPUB](dist/Introduction-to-YAML.epub)
-- [MOBI](dist/Introduction-to-YAML.mobi)
-- [TXT](dist/Introduction-to-YAML.txt)
+- [Mardown](Introduction-to-YAML.html)
+- [Epub](dist/Introduction-to-YAML.epub)
+- [Mobi](dist/Introduction-to-YAML.mobi)
+- [Txt](dist/Introduction-to-YAML.txt)
