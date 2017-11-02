@@ -68,7 +68,7 @@ Key-value pairs
 
 YAML keeps data stored as a map containing keys and values associated with those keys. This map is in no particular order, so you can reorder it at will. Each pair is in the format KEY: VALUE. For example:
 
-minecraft-tag: 'minecraft' cancelled-tag: 'cancelled'
+min-tag: 'minecraft' can-tag: 'cancelled'
 
 
 
@@ -78,7 +78,7 @@ Other than text, numbers and true/false, the value associated to a key can also 
 
 YAML will consider that lines prefixed with more spaces than the parent key are contained inside it; Moreover, all lines must be prefixed with the same number of spaces to belong to the same map. So this works:
 
-formatting: from-game: chat: '(%sender%) %message%' action: '* %sender% %message%'
+formatting: fromgame: chat: '(%sender%) %message%' action: '* %sender% %message%'
 
 
 
@@ -181,7 +181,7 @@ For clarity, compactness, and avoiding data entry errors, YAML provides node anc
 
 Below is an example of a queue in an instrument sequencer in which two steps are reused repeatedly without being fully described each time.
 
-# sequencer protocols for Laser eye surgery --- - step: &id001 # defines anchor label &id001 instrument: Lasik 2000 pulseEnergy: 5.4 pulseDuration: 12 repetition: 1000 spotSize: 1mm - step: &id002 instrument: Lasik 2000 pulseEnergy: 5.0 pulseDuration: 10 repetition: 500 spotSize: 2mm - step: *id001 # refers to the first step (with anchor &id001) - step: *id002 # refers to the second step - step: <<: *id001 spotSize: 2mm # redefines just this key, refers rest from &id001 - step: *id002
+# sequencer protocols for Laser eye surgery --- - step: &id001 # defines anchor label &id001 instrument: Lasik 2000 energy: 5.4 duration: 12 repetition: 1000 size: 1mm - step: &id002 instrument: Lasik 2000 energy: 5.0 duration: 10 repetition: 500 size: 2mm - step: *id001 # refers to the first step (with anchor &id001) - step: *id002 # refers to the second step - step: <<: *id001 size: 2mm # redefines just this key, refers rest from &id001 - step: *id002
 
 
 
@@ -219,7 +219,7 @@ Multiples documents
 
 Core to YAML is the concept of documents. A document is not just a separate file in this case. Instead, think of a document as just a chunk of YAML. You can have multiple documents in a single stream of YAML, if each one is separated by ''---'', like:
 
-document: this is doc 1 --- document: this is doc 2 ...
+--- document: this is doc 1 --- document: this is doc 2 ...
 
 
 

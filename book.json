@@ -1,6 +1,6 @@
 {
   "structure": {
-    "readme": "Introduction-To-YAML.md"
+    "readme": "readme.md"
   },
   "author": "Arthur Lacoste",
   "plugins": ["edit-link"],
