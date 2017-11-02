@@ -4,7 +4,7 @@ YAML is a very simple, text/human-readable annotation format that can be used to
 
 It supports JSON, another minimalist data serialization format where braces and brackets are used instead of indentation.
 
-- [Read online](https://arthurlacoste.github.io/Introduction-To-YAML/)
+- [Read online](https://yaml.irz.fr)
 
 ## Alternatives versions
 
