@@ -3,11 +3,21 @@
     "readme": "readme.md"
   },
   "author": "Arthur Lacoste",
-  "plugins": ["edit-link"],
+  "plugins": ["edit-link", "scripts","prism", "-highlight"],
   "pluginsConfig": {
     "edit-link": {
       "base": "https://github.com/arthurlacoste/Introduction-To-YAML/edit/master/",
       "label": "Edit This Page"
+    },
+    "scripts": {
+      "files": [
+        "./res/custom.js"
+      ]
+    },
+    "prism": {
+      "css": [
+        "../../res/prism-onedark.css"
+      ]
     }
   }
 }

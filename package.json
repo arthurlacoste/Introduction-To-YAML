@@ -26,6 +26,9 @@
     "gitbook-cli": "^2.3.2"
   },
   "dependencies": {
-    "gitbook-plugin-edit-link": "^2.0.2"
+    "gitbook-plugin-edit-link": "^2.0.2",
+    "gitbook-plugin-prism": "^2.3.0",
+    "gitbook-plugin-scripts": "^1.0.2",
+    "gitbook-plugin-signature": "^1.5.2"
   }
 }
