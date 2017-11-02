@@ -163,7 +163,7 @@ This really has nothing to do with Ansible, but will give you a feel for the for
 
 ```yaml
 # An employee record
-name: Martin D'vloper
+name: Martin Devloper
 job: Developer
 skill: Elite
 employed: True
