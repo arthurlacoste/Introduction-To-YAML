@@ -45,3 +45,5 @@ YAML supports JSON syntax to store key-value maps, useful for compressing small 
 
 ```yaml
 formatting: {from-game: {chat: '(%sender%) %message%', action: '* %sender% %message%'}}
+```
+
