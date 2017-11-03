@@ -1,3 +1,4 @@
+# Summary
 
 * [Foreword](readme.md)
 * [Why ?](Introduction-to-YAML.md#why-)
@@ -11,4 +12,7 @@
 * [Variables](Introduction-to-YAML.md#variables)
 * [Conclusion](Introduction-to-YAML.md#conclusion)
 * [References](Introduction-to-YAML.md#references)
-* [External links](Introduction-to-YAML.md#external-links)
+* [Basic principles](basic-principles.md)
+* [Basic principles](basic-principles.md)
+* [Key-value pairs](key-value-pairs.md)
+
