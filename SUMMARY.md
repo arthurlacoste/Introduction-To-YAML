@@ -11,5 +11,6 @@
 * [Variables](Introduction-to-YAML.md#variables)
 * [Conclusion](Introduction-to-YAML.md#conclusion)
 * [References](Introduction-to-YAML.md#references)
-
+* [List](list.md)
+* [Multiples Lines](multiples-lines.md)
 
