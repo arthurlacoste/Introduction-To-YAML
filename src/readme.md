@@ -8,7 +8,6 @@ It supports JSON, another minimalist data serialization format where braces and 
 
 ## Alternatives versions
 
-- [Mardown](https://github.com/arthurlacoste/Introduction-To-YAML/blob/master/Introduction-to-YAML.md)
 - [Epub](dist/Introduction-to-YAML.epub)
 - [Mobi](dist/Introduction-to-YAML.mobi)
-- [Txt](dist/Introduction-to-YAML.txt)
+- [PDF](dist/Introduction-to-YAML.pdf)
