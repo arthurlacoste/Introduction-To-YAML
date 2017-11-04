@@ -8,7 +8,7 @@
   "plugins": ["edit-link", "scripts","prism", "-highlight","ga"],
   "pluginsConfig": {
     "edit-link": {
-      "base": "https://github.com/arthurlacoste/Introduction-To-YAML/edit/master/",
+      "base": "https://github.com/arthurlacoste/Introduction-To-YAML/edit/master/src/",
       "label": "Edit This Page"
     },
     "scripts": {
