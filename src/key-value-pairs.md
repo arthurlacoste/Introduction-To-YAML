@@ -32,7 +32,7 @@ formatting:
 
 But this doesn't work:
 
-```not-yaml
+```yaml
 formatting:
 from-game:
 chat: '(%sender%) %message%'

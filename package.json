@@ -6,7 +6,8 @@
     "docs:prepare": "gitbook install",
     "docs:watch": "npm run docs:prepare && gitbook serve",
     "docs:build": "npm run docs:prepare && rm -rf _book && gitbook build",
-    "docs:publish": "npm run docs:build && cd _book && git init && git commit --allow-empty -m 'Update docs' && git checkout -b gh-pages && git add . && git commit -am 'Update docs' && git push git@github.com:arthurlacoste/Introduction-To-YAML gh-pages --force"
+    "docs:publish": "npm run docs:build && cd _book && git init && git commit --allow-empty -m 'Update docs' && git checkout -b gh-pages && git add . && git commit -am 'Update docs' && git push git@github.com:arthurlacoste/Introduction-To-YAML gh-pages --force && npm run ebook",
+    "ebook": "gitbook epub ./ dist/Introduction-To-YAML.epub  && gitbook mobi ./ dist/Introduction-To-YAML.mobi && gitbook pdf ./ dist/Introduction-To-YAML.pdf"
   },
   "repository": {
     "type": "git",

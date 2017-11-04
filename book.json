@@ -1,4 +1,6 @@
 {
+  "title":"Introduction to YAML",
+  "root":  "./src",
   "structure": {
     "readme": "readme.md"
   },
@@ -16,7 +18,7 @@
     },
     "prism": {
       "css": [
-        "../../res/prism-onedark.css"
+        "prismjs/themes/prism-tomorrow.css"
       ]
     },
     "ga": {
