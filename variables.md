@@ -1,0 +1,3 @@
+## Variables
+
+There is actually no support of variables into [the last specifications of YAML](http://www.yaml.org/spec/1.2/spec.html). But there is [some implementations](https://github.com/arthurlacoste/tampax) to use a system handling variables. Extensions library or template system like [Jinja2](jinja.pocoo.org) or [Twig](https://twig.symfony.com/) can be a way to add this feature to your YAML files.
