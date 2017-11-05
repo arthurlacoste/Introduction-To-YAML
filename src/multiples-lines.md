@@ -2,7 +2,7 @@
 
 Values can span multiple lines using ``|`` or ``>``.  Spanning multiple lines using a ``|`` will include the newlines.  Using a ``>`` will ignore newlines; it's used to make what would otherwise be a very long line easier to read and edit.
 In either case the indentation will be ignored.
-Examples are::
+Examples are:
 
 ```yaml
 include_newlines: |
