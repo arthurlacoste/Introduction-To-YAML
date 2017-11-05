@@ -16,7 +16,8 @@ ignore_newlines: >
 ```
 
 Let's combine what we learned so far in an arbitrary YAML example.
-This really has nothing to do with Ansible, but will give you a feel for the format::
+
+This will give you a feel for the format:
 
 ```yaml
 # An employee record
