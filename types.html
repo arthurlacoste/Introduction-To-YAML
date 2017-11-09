@@ -1,0 +1,396 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Types · Introduction to YAML</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Arthur Lacoste">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="multiples-documents.html" />
+    
+    
+    <link rel="prev" href="node-anchors.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Foreword
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="basic-principles.html">
+            
+                <a href="basic-principles.html">
+            
+                    
+                    Basic principles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="key-value-pairs.html">
+            
+                <a href="key-value-pairs.html">
+            
+                    
+                    Key-value pairs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="list.html">
+            
+                <a href="list.html">
+            
+                    
+                    List
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="multiples-lines.html">
+            
+                <a href="multiples-lines.html">
+            
+                    
+                    Multiples Lines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="node-anchors.html">
+            
+                <a href="node-anchors.html">
+            
+                    
+                    Node anchors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7" data-path="types.html">
+            
+                <a href="types.html">
+            
+                    
+                    Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="multiples-documents.html">
+            
+                <a href="multiples-documents.html">
+            
+                    
+                    Multiples documents
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="variables.html">
+            
+                <a href="variables.html">
+            
+                    
+                    Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="conclusion.html">
+            
+                <a href="conclusion.html">
+            
+                    
+                    Conclusion
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="bibliography.html">
+            
+                <a href="bibliography.html">
+            
+                    
+                    Bibliography
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Types</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="types">Types</h2>
+<p>Explicit data typing is seldom seen in the majority of YAML documents since YAML autodetects simple types. Data types can be divided into three categories: core, defined, and user-defined. Core are ones expected to exist in any parser (e.g. floats, ints, strings, lists, maps, ...). Many more advanced data types, such as binary data, are defined in the YAML specification but not supported in all implementations. Finally YAML defines a way to extend the data type definitions locally to accommodate user-defined classes, structures or primitives (e.g. quad-precision floats).</p>
+<p>YAML autodetects the datatype of the entity. Sometimes one wants to cast the datatype explicitly. The most common situation is where a single-word string that looks like a number, boolean or tag requires disambiguation by surrounding it with quotes or using an explicit datatype tag.</p>
+<pre class="language-"><code class="lang-yaml"><span class="token key atrule">a</span><span class="token punctuation">:</span> <span class="token number">123                     </span><span class="token comment" spellcheck="true"># an integer</span>
+<span class="token key atrule">b</span><span class="token punctuation">:</span> <span class="token string">&quot;123&quot;</span>                   <span class="token comment" spellcheck="true"># a string, disambiguated by quotes</span>
+<span class="token key atrule">c</span><span class="token punctuation">:</span> <span class="token number">123.0                   </span><span class="token comment" spellcheck="true"># a float</span>
+<span class="token key atrule">d</span><span class="token punctuation">:</span> <span class="token tag">!!float</span> <span class="token number">123             </span><span class="token comment" spellcheck="true"># also a float via explicit data type prefixed by (!!)</span>
+<span class="token key atrule">e</span><span class="token punctuation">:</span> <span class="token tag">!!str</span> <span class="token number">123               </span><span class="token comment" spellcheck="true"># a string, disambiguated by explicit type</span>
+<span class="token key atrule">f</span><span class="token punctuation">:</span> <span class="token tag">!!str</span> Yes               <span class="token comment" spellcheck="true"># a string via explicit type</span>
+<span class="token key atrule">g</span><span class="token punctuation">:</span> Yes                     <span class="token comment" spellcheck="true"># a boolean True (yaml1.1), string &quot;Yes&quot; (yaml1.2)</span>
+<span class="token key atrule">h</span><span class="token punctuation">:</span> Yes we have No bananas  <span class="token comment" spellcheck="true"># a string, &quot;Yes&quot; and &quot;No&quot; disambiguated by context.</span>
+</code></pre>
+<p>Not every implementation of YAML has every specification-defined data type. These built-in types use a double exclamation sigil prefix (<code>!!</code>). </p>
+<p>Particularly interesting ones not shown here are sets, ordered maps, timestamps, and hexadecimal. Here&apos;s an example of base64 encoded binary data.</p>
+<pre class="language-"><code class="lang-yaml"><span class="token key atrule">gif_file</span><span class="token punctuation">:</span> <span class="token tag">!!binary</span> <span class="token punctuation">|</span><span class="token scalar string">
+  R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5
+  OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+
+  +f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC
+  AgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=</span>
+</code></pre>
+<p>Date can be handle too: </p>
+<pre class="language-"><code class="lang-yaml"><span class="token key atrule">datetime</span><span class="token punctuation">:</span> <span class="token datetime number">2001-12-15T02:59:43.1Z</span>
+<span class="token key atrule">datetime_with_spaces</span><span class="token punctuation">:</span> <span class="token datetime number">2001-12-14 21:59:43.10 -5</span>
+<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2002-12-14</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="node-anchors.html" class="navigation navigation-prev " aria-label="Previous page: Node anchors">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="multiples-documents.html" class="navigation navigation-next " aria-label="Next page: Multiples documents">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Types","level":"1.7","depth":1,"next":{"title":"Multiples documents","level":"1.8","depth":1,"path":"multiples-documents.md","ref":"multiples-documents.md","articles":[]},"previous":{"title":"Node anchors","level":"1.6","depth":1,"path":"node-anchors.md","ref":"node-anchors.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","scripts","prism","-highlight","ga"],"root":"./src","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./res/custom.js"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"ga":{"configuration":"auto","token":"UA-5025145-5"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/arthurlacoste/Introduction-To-YAML/edit/master/src/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Arthur Lacoste","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Introduction to YAML","gitbook":"*"},"file":{"path":"types.md","mtime":"2017-11-04T09:07:51.041Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-09T08:56:38.851Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-scripts/d0c70b7a6a4d5b29796909aecc66d461-custom.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

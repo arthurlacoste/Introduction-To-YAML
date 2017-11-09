@@ -1,0 +1,406 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Multiples Lines · Introduction to YAML</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Arthur Lacoste">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="node-anchors.html" />
+    
+    
+    <link rel="prev" href="list.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Foreword
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="basic-principles.html">
+            
+                <a href="basic-principles.html">
+            
+                    
+                    Basic principles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="key-value-pairs.html">
+            
+                <a href="key-value-pairs.html">
+            
+                    
+                    Key-value pairs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="list.html">
+            
+                <a href="list.html">
+            
+                    
+                    List
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="multiples-lines.html">
+            
+                <a href="multiples-lines.html">
+            
+                    
+                    Multiples Lines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="node-anchors.html">
+            
+                <a href="node-anchors.html">
+            
+                    
+                    Node anchors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="types.html">
+            
+                <a href="types.html">
+            
+                    
+                    Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="multiples-documents.html">
+            
+                <a href="multiples-documents.html">
+            
+                    
+                    Multiples documents
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="variables.html">
+            
+                <a href="variables.html">
+            
+                    
+                    Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="conclusion.html">
+            
+                <a href="conclusion.html">
+            
+                    
+                    Conclusion
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="bibliography.html">
+            
+                <a href="bibliography.html">
+            
+                    
+                    Bibliography
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Multiples Lines</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="multiple-lines">Multiple lines</h2>
+<p>Values can span multiple lines using <code>|</code> or <code>&gt;</code>.  Spanning multiple lines using a <code>|</code> will include the newlines.  Using a <code>&gt;</code> will ignore newlines; it&apos;s used to make what would otherwise be a very long line easier to read and edit.
+In either case the indentation will be ignored.
+Examples are:</p>
+<pre class="language-"><code class="lang-yaml"><span class="token key atrule">include_newlines</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+  \/ /| |\/| |
+  / / | |  | |__</span>
+
+<span class="token key atrule">ignore_newlines</span><span class="token punctuation">:</span> <span class="token punctuation">&gt;</span><span class="token scalar string">
+  this is really a
+  single line of text
+  despite appearances</span>
+</code></pre>
+<p>Let&apos;s combine what we learned so far in an arbitrary YAML example.</p>
+<p>This will give you a feel for the format:</p>
+<pre class="language-"><code class="lang-yaml"><span class="token comment" spellcheck="true"># An employee record</span>
+<span class="token key atrule">name</span><span class="token punctuation">:</span> Martin Devloper
+<span class="token key atrule">job</span><span class="token punctuation">:</span> Developer
+<span class="token key atrule">skill</span><span class="token punctuation">:</span> Elite
+<span class="token key atrule">employed</span><span class="token punctuation">:</span> <span class="token boolean important">True</span>
+<span class="token key atrule">foods</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> Apple
+  <span class="token punctuation">-</span> Orange
+  <span class="token punctuation">-</span> Strawberry
+  <span class="token punctuation">-</span> Mango
+<span class="token key atrule">languages</span><span class="token punctuation">:</span>
+  <span class="token key atrule">perl</span><span class="token punctuation">:</span> Elite
+  <span class="token key atrule">python</span><span class="token punctuation">:</span> Elite
+  <span class="token key atrule">pascal</span><span class="token punctuation">:</span> Lame
+<span class="token key atrule">education</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+  4 GCSEs
+  3 A-Levels
+  BSc in the Internet of Things</span>
+</code></pre>
+<p>That&apos;s all you really need to know about YAML to start writing YAML.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="list.html" class="navigation navigation-prev " aria-label="Previous page: List">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="node-anchors.html" class="navigation navigation-next " aria-label="Next page: Node anchors">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Multiples Lines","level":"1.5","depth":1,"next":{"title":"Node anchors","level":"1.6","depth":1,"path":"node-anchors.md","ref":"node-anchors.md","articles":[]},"previous":{"title":"List","level":"1.4","depth":1,"path":"list.md","ref":"list.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","scripts","prism","-highlight","ga"],"root":"./src","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./res/custom.js"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"ga":{"configuration":"auto","token":"UA-5025145-5"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/arthurlacoste/Introduction-To-YAML/edit/master/src/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Arthur Lacoste","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Introduction to YAML","gitbook":"*"},"file":{"path":"multiples-lines.md","mtime":"2017-11-06T08:44:10.686Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-09T08:56:38.851Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-scripts/d0c70b7a6a4d5b29796909aecc66d461-custom.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
