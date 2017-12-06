@@ -8,9 +8,9 @@ It supports JSON, another minimalist data serialization format where braces and 
 
 ## Alternatives versions
 
-- [Epub](dist/Introduction-to-YAML.epub)
-- [Mobi](dist/Introduction-to-YAML.mobi)
-- [PDF](dist/Introduction-to-YAML.pdf)
+- [Epub](https://github.com/arthurlacoste/Introduction-To-YAML/raw/master/dist/Introduction-to-YAML.epub)
+- [Mobi](https://github.com/arthurlacoste/Introduction-To-YAML/raw/master/dist/Introduction-to-YAML.mobi)
+- [PDF](https://github.com/arthurlacoste/Introduction-To-YAML/raw/master/dist/Introduction-to-YAML.pdf)
 
 ## Licence Public Domain Dedication (CC0 1.0)
 
